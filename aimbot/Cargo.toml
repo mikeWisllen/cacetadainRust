@@ -1,0 +1,32 @@
+[package]
+name = "valorant_aimbot_rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Seu Nome <seu@email.com>"]
+description = "Advanced Valorant Aimbot Implementation in Rust"
+license = "MIT"
+
+[dependencies]
+windows = { version = "0.54", features = [
+    # Core
+    "Win32_Foundation",
+    "Win32_System_SystemServices",
+    
+    # UI Components
+    "Win32_UI_Input_KeyboardAndMouse",
+    "Win32_UI_WindowsAndMessaging",
+    
+    # Graphics
+    "Win32_Graphics_Gdi",
+    "Win32_Graphics_Dwm",  # Adicionado para DwmGetWindowAttribute
+    
+    # Otimizações (remova se não for usar)
+    "Win32_System_Threading",
+    "Win32_System_Memory",
+]}
+
+rand = { version = "0.8", features = ["small_rng"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+[build-dependencies]
+windows = "0.54"
